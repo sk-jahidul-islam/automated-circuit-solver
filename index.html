@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Automated Circuit Solver</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<nav aria-label="Main navigation">
+  <button class="tablink active" data-tab="ohms-law" aria-controls="ohms-law" aria-selected="true">Ohm's Law</button>
+  <button class="tablink" data-tab="resistors" aria-controls="resistors" aria-selected="false">Resistors Network</button>
+  <button class="tablink" data-tab="kvl" aria-controls="kvl" aria-selected="false">Kirchhoff's Law</button>
+  <button class="tablink" data-tab="capacitance" aria-controls="capacitance" aria-selected="false">Capacitance</button>
+  <button class="tablink" data-tab="unit-converter" aria-controls="unit-converter" aria-selected="false">Unit Converter</button>
+</nav>
+<main>
+  <h1 class="app-title">Automated Circuit Solver</h1>
+
+  <!-- Ohm's Law -->
+  <section class="tabcontent" id="ohms-law" role="tabpanel" aria-labelledby="ohms-law-tab" style="display:block;">
+    <h2>Ohm's Law Calculator</h2>
+    <label for="ohm-voltage">Voltage (V):</label>
+    <input type="number" id="ohm-voltage" placeholder="Leave empty if unknown" step="any" min="0" />
+    <label for="ohm-current">Current (A):</label>
+    <input type="number" id="ohm-current" placeholder="Leave empty if unknown" step="any" min="0" />
+    <label for="ohm-resistance">Resistance (Ω):</label>
+    <input type="number" id="ohm-resistance" placeholder="Leave empty if unknown" step="any" min="0" />
+    <button class="action-btn" id="btn-ohms-calc">Calculate</button>
+    <div id="ohms-result" class="result" aria-live="polite"></div>
+  </section>
+
+  <!-- Resistors Network -->
+  <section class="tabcontent" id="resistors" role="tabpanel" aria-labelledby="resistors-tab" style="display:none;">
+    <h2>Resistors Network</h2>
+    <label for="resistor-connection">Connection Type:</label>
+    <select id="resistor-connection">
+      <option value="series">Series</option>
+      <option value="parallel">Parallel</option>
+    </select>
+    <div class="inputs-list" id="resistors-list"></div>
+    <button class="small-btn" id="add-resistor">Add Resistor</button>
+    <button class="action-btn" id="calc-resistors">Calculate Total Resistance</button>
+    <div id="resistors-result" class="result" aria-live="polite"></div>
+  </section>
+
+  <!-- Kirchhoff Voltage Law -->
+  <section class="tabcontent" id="kvl" role="tabpanel" aria-labelledby="kvl-tab" style="display:none;">
+    <h2>Kirchhoff's Voltage Law (Single Loop)</h2>
+    <label>Voltage Sources (V):</label>
+    <div class="inputs-list" id="voltages-list"></div>
+    <button class="small-btn" id="add-voltage">Add Voltage Source</button>
+    <label>Resistances (Ω):</label>
+    <div class="inputs-list" id="resistances-list"></div>
+    <button class="small-btn" id="add-resistance">Add Resistance</button>
+    <button class="action-btn" id="calc-kvl">Calculate</button>
+    <div id="kvl-result" class="result" aria-live="polite"></div>
+  </section>
+
+  <!-- Capacitance Calculator -->
+  <section class="tabcontent" id="capacitance" role="tabpanel" aria-labelledby="capacitance-tab" style="display:none;">
+    <h2>Capacitance Calculator</h2>
+    <label for="capacitance-connection">Connection Type:</label>
+    <select id="capacitance-connection">
+      <option value="series">Series</option>
+      <option value="parallel">Parallel</option>
+    </select>
+    <div class="inputs-list" id="capacitors-list"></div>
+    <button class="small-btn" id="add-capacitor">Add Capacitor</button>
+    <button class="action-btn" id="calc-capacitance">Calculate Total Capacitance</button>
+    <div id="capacitance-result" class="result" aria-live="polite"></div>
+  </section>
+
+  <!-- Unit Converter -->
+  <section class="tabcontent" id="unit-converter" role="tabpanel" aria-labelledby="unit-converter-tab" style="display:none;">
+    <h2>Unit Converter</h2>
+    <label for="convert-value">Value:</label>
+    <input type="number" id="convert-value" step="any" />
+    <label for="convert-from">From Unit:</label>
+    <select id="convert-from">
+      <option value="ohm">Ohm</option>
+      <option value="kohm">kOhm</option>
+      <option value="mohm">MOhm</option>
+      <option value="pF">pF</option>
+      <option value="nF">nF</option>
+      <option value="uF">uF</option>
+      <option value="mF">mF</option>
+      <option value="f">F</option>
+      <option value="v">V</option>
+      <option value="kv">kV</option>
+      <option value="mv">mV</option>
+      <option value="a">A</option>
+      <option value="ma">mA</option>
+    </select>
+    <label for="convert-to">To Unit:</label>
+    <select id="convert-to">
+      <option value="ohm">Ohm</option>
+      <option value="kohm">kOhm</option>
+      <option value="mohm">MOhm</option>
+      <option value="pF">pF</option>
+      <option value="nF">nF</option>
+      <option value="uF">uF</option>
+      <option value="mF">mF</option>
+      <option value="f">F</option>
+      <option value="v">V</option>
+      <option value="kv">kV</option>
+      <option value="mv">mV</option>
+      <option value="a">A</option>
+      <option value="ma">mA</option>
+    </select>
+    <button class="action-btn" id="btn-convert">Convert</button>
+    <div id="convert-result" class="result" aria-live="polite"></div>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+/* Reset and base */
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #fafafa;
+    color: #222;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+  }
+  /* Sidebar container for vertical center */
+  nav {
+    width: 200px;
+    background: #e9ecef;
+    border-right: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertical centering */
+    align-items: stretch;
+    padding: 15px 0;
+  }
+  nav button {
+    border: none;
+    background: none;
+    padding: 15px 20px;
+    font-size: 1rem;
+    text-align: left;
+    cursor: pointer;
+    border-left: 4px solid transparent;
+    transition: background-color 0.3s, border-left-color 0.3s;
+    color: #444;
+    width: 100%;
+  }
+  nav button:hover,
+  nav button:focus {
+    background-color: #d0d7de;
+    outline: none;
+  }
+  nav button.active {
+    background-color: #c8d6e5;
+    font-weight: bold;
+    border-left-color: #007acc;
+    color: #005a9e;
+  }
+  /* Main content area */
+  main {
+    flex-grow: 1;
+    padding: 30px 40px 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  h1.app-title {
+    margin: 40px 0 30px 0;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #007acc;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  section.tabcontent {
+    width: 100%;
+    max-width: 600px;
+  }
+  h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #333;
+    text-align: left;
+  }
+  /* Form Elements */
+  label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+  }
+  input[type="number"],
+  select {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 1rem;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    margin-top: 7px;
+    background: white;
+    transition: border-color 0.3s;
+  }
+  input[type="number"]:focus,
+  select:focus {
+    border-color: #007acc;
+    outline: none;
+  }
+  button.action-btn {
+    margin-top: 25px;
+    background-color: #007acc;
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+  }
+  button.action-btn:hover,
+  button.action-btn:focus {
+    background-color: #005fa3;
+    outline: none;
+  }
+  button.small-btn {
+    padding: 5px 12px;
+    margin-left: 12px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    border: 1px solid #bbb;
+    background: #f8f9fa;
+    border-radius: 4px;
+    color: #444;
+    vertical-align: middle;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  button.small-btn:hover,
+  button.small-btn:focus {
+    background: #e2e6ea;
+    border-color: #adb5bd;
+    outline: none;
+  }
+  /* Inputs list for multiple entries */
+  .inputs-list {
+    margin-top: 10px;
+  }
+  .inputs-list div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+  .inputs-list input[type=number] {
+    flex: 1;
+    font-size: 1rem;
+  }
+  /* Results */
+  .result {
+    margin-top: 25px;
+    padding: 14px 18px;
+    background: #f1f3f5;
+    border: 1px solid #d6d8db;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    white-space: pre-line;
+    color: #222;
+    min-height: 50px;
+  }
+  /* Scrollbars for main content */
+  main::-webkit-scrollbar {
+    width: 8px;
+  }
+  main::-webkit-scrollbar-track {
+    background: #f0f0f0;
+  }
+  main::-webkit-scrollbar-thumb {
+    background-color: #c0c4cc;
+    border-radius: 10px;
+  }
+  main::-webkit-scrollbar-thumb:hover {
+    background-color: #a0a4aa;
+  }
+  
