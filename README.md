@@ -46,5 +46,5 @@ You can access the live version of the Automated Circuit Solver at [https://auto
 
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/yourusername/automated-circuit-solver.git
+   git clone https://github.com/sk-jahidul-islam/automated-circuit-solver.git
    cd automated-circuit-solver
